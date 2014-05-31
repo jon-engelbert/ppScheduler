@@ -1,0 +1,41 @@
+<h1>Listing matches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Begin</th>
+      <th>End</th>
+      <th>Assignment</th>
+      <th>Available1</th>
+      <th>Available2</th>
+      <th>User1 response?</th>
+      <th>User2 response?</th>
+      <th>User1 commitment</th>
+      <th>User2 commitment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matches.each do |match| %>
+      <tr>
+        <td><%= match.begin %></td>
+        <td><%= match.end %></td>
+        <td><%= match.assignment_id %></td>
+        <td><%= match.available1_id %></td>
+        <td><%= match.available2_id %></td>
+        <td><%= match.user1_response? %></td>
+        <td><%= match.user2_response? %></td>
+        <td><%= match.user1_commitment %></td>
+        <td><%= match.user2_commitment %></td>
+        <td><%= link_to 'Show', match %></td>
+        <td><%= link_to 'Edit', edit_match_path(match) %></td>
+        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Match', new_match_path %>

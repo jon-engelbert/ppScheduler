@@ -1,0 +1,35 @@
+<h1>Listing availables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Begin</th>
+      <th>End</th>
+      <th>Assignment</th>
+      <th>Proirity</th>
+      <th>Active?</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @availables.each do |available| %>
+      <tr>
+        <td><%= available.student_id %></td>
+        <td><%= available.begin %></td>
+        <td><%= available.end %></td>
+        <td><%= available.assignment_id %></td>
+        <td><%= available.proirity %></td>
+        <td><%= available.active? %></td>
+        <td><%= link_to 'Show', available %></td>
+        <td><%= link_to 'Edit', edit_available_path(available) %></td>
+        <td><%= link_to 'Destroy', available, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Available', new_available_path %>

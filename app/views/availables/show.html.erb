@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @available.student_id %>
+</p>
+
+<p>
+  <strong>Begin:</strong>
+  <%= @available.begin %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @available.end %>
+</p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @available.assignment_id %>
+</p>
+
+<p>
+  <strong>Proirity:</strong>
+  <%= @available.proirity %>
+</p>
+
+<p>
+  <strong>Active?:</strong>
+  <%= @available.active? %>
+</p>
+
+<%= link_to 'Edit', edit_available_path(@available) %> |
+<%= link_to 'Back', availables_path %>

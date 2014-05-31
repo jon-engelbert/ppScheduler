@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 1
+  begin: 2014-05-31 11:13:26
+  end: 2014-05-31 11:13:26
+  assignment_id: 1
+  proirity: 1
+  active?: false
+
+two:
+  student_id: 1
+  begin: 2014-05-31 11:13:26
+  end: 2014-05-31 11:13:26
+  assignment_id: 1
+  proirity: 1
+  active?: false

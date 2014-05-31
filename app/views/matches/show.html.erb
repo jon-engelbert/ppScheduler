@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Begin:</strong>
+  <%= @match.begin %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @match.end %>
+</p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @match.assignment_id %>
+</p>
+
+<p>
+  <strong>Available1:</strong>
+  <%= @match.available1_id %>
+</p>
+
+<p>
+  <strong>Available2:</strong>
+  <%= @match.available2_id %>
+</p>
+
+<p>
+  <strong>User1 response?:</strong>
+  <%= @match.user1_response? %>
+</p>
+
+<p>
+  <strong>User2 response?:</strong>
+  <%= @match.user2_response? %>
+</p>
+
+<p>
+  <strong>User1 commitment:</strong>
+  <%= @match.user1_commitment %>
+</p>
+
+<p>
+  <strong>User2 commitment:</strong>
+  <%= @match.user2_commitment %>
+</p>
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>

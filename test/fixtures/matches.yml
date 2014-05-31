@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  begin: 2014-05-31 11:28:13
+  end: 2014-05-31 11:28:13
+  assignment_id: 1
+  available1_id: 1
+  available2_id: 1
+  user1_response?: false
+  user2_response?: false
+  user1_commitment: 1
+  user2_commitment: 1
+
+two:
+  begin: 2014-05-31 11:28:13
+  end: 2014-05-31 11:28:13
+  assignment_id: 1
+  available1_id: 1
+  available2_id: 1
+  user1_response?: false
+  user2_response?: false
+  user1_commitment: 1
+  user2_commitment: 1
