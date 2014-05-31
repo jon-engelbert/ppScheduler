@@ -1,56 +1,45 @@
-Internal data structures:
-User: 
+#Internal data structures:
+##User: 
 name, email, text #, primary language, English (yes/no), teacher (yes/no)
-name:string email:string cellphone:string english_speaker?:boolean teacher?:boolean student?:boolean admin?:boolean (id:primary_key)
+name:string email:string cellphone:string english_speaker?:boolean teacher?:boolean student?:boolean admin?:boolean 
+validates :email, confirmation: true
+validates :name, :email, presence: true
+validates :email, uniqueness: true
+  with_options if: :is_admin? do |admin|
+    admin.validates :password, length: { minimum: 10 }
+    admin.validates :email, presence: true
+  end
+  
 
-CourseStudent: 
-user (fk),course, years of relevant experience
-
-Course:
-id:primary_key, name:string, teacher:string, teacher2:string, teacher3:string
+##ProjectOwner:
+id:primary_key, title:string, teacher:string, teacher2:string, teacher3:string
 rails generate scaffold Course  name:string teacher:string teacher2:string teacher3:string university:string start_date:date
-change name to title
-has_many :assignments
+has_many :Projects
 
-enrollment:
+##Membership:
 student_id (fk):integer
 course_id (fk):integer
 
 
-assignment: 
-course_id(fk), title, due_date:datetime
-belongs_to :course
-has_many: availability
+##Project: 
+project_owner_id(fk), title:string, due_date:datetime
+belongs_to :ProjectOwner
+has_many: Availability
 
-availabile: 
-student_id(fk):integer,  begin:datetime, end:datetime, assignment_id(fk):integer, priority:integer (high/medium/low), active?:boolean 
-change student_id to user_id
+##Available: 
+user_id(fk):integer,  begin:datetime, end:datetime, project_id(fk):integer, priority:integer (high/medium/low), active?:boolean 
 belongs_to :user
-belongs_to :assignment
+belongs_to :project
 
 
-Match:
-begin:datetime, end:datetime, assignment_id(fk):integer, available1_id(fk):integer, available2_id(fk):integer, user1_responded?:boolean, user2_responded?:boolean, user1_commitment:integer, user2_commitment:integer
-belongs_to :assignment
+##Match:
+begin:datetime, end:datetime, project_id(fk):integer, available1_id(fk):integer, available2_id(fk):integer, user1_responded?:boolean, user2_responded?:boolean, user1_commitment:integer, user2_commitment:integer
+belongs_to :project
 belongs_to :available
 
 
-c:\Users\jon\RailsProjects\ppScheduler>rails generate scaffold Match 
-begin:datetime 
-end:datetime 
-assignment_id:integer 
-available1_id:integer 
-available2_id:integer 
-user1_response?:boolean 
-user2_response?:boolean 
-user1_commitment:integer 
-user2_commitment:integer
-
-commitment:
-student_id(fk):integer, student_commit_level (solid, maybe, bug-off), potential match (fk)
-
-algorithm:
-Matchmaker:
-Every so often, go through availabiities and find matches, i.e. other student availabilities matching the assignment and within an overlapping time window, between those who are not yet committed or cancelled out.
+#algorithms:
+##Matchmaker:
+Every so often, go through availables and find matches, i.e. other user availabilities matching the project and within an overlapping time window, between those who are not yet committed or cancelled out.
 Then notify the parties of the potential match.
 
