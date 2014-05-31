@@ -9,7 +9,7 @@
 -    admin.validates :password, length: { minimum: 10 }
 -    admin.validates :email, presence: true
 -  end
--belongs_to :membership
+- belongs_to :membership
   
 
 ##ProjectOwner:
