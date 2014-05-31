@@ -1,28 +1,7 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- Just getting started.  
+- See pivotal tracker project for user stories
+- see saasmatchmakerdatastructures.md for data structures with relationships
+- need storyboard / mockups
+- need graphical representation of database schema... should be free once it's in sqllite database
+- body of application developed with scaffolding, but already obsolete.  Probably easier to destroy everything but saasmatchmakerdatastructures.md,
+- then re-scaffold with new class names & field names once they are more solid
