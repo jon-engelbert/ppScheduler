@@ -1,7 +1,7 @@
 class CreateCourses < ActiveRecord::Migration
   def change
     create_table :courses do |t|
-      t.string :name
+      t.string :title
       t.string :teacher
       t.string :teacher2
       t.string :teacher3
